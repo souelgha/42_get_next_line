@@ -6,28 +6,26 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:11:00 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/12/07 16:11:01 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:53:06 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE _H 
+# define GET_NEXT_LINE _H 
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 7
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 7
+# endif
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
 
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
-char    *ft_readbuffer(int fd, char *str);
-char	*ft_strrchr(const char *str, int c);
+char	*ft_readbuffer(int fd, char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_line(char *stringread);
 char	*get_next_line(int fd);
