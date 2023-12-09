@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:11:18 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/12/08 18:24:12 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:23:38 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ char	*ft_nextline(char *strread)
 		return (NULL);
 	while (strread[i] != '\0' && strread[i] != '\n')
 		i++;
-	printf("i=%d strlen=%zu\n", i, ft_strlen(strread));
 	nextline = malloc(sizeof(char) * (ft_strlen(strread) -i + 1));
-	i++;
+	if (strread[i] == '\n')
+		i++;
 	if (nextline == NULL)
 		return (NULL);
 	while (strread[i] != '\0')

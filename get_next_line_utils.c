@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:29:47 by sonia             #+#    #+#             */
-/*   Updated: 2023/12/07 16:11:09 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:24:28 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(char *src)
 {
 	char	*str;
 	size_t	size_src;
@@ -39,22 +39,21 @@ char	*ft_strdup(const char *src)
 		i++;
 	}
 	str[i] = '\0';
+//	free(src);
 	return (str);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char			*newstr;
 	unsigned int	i;
 	unsigned int	j;
 
 	if (!s1 && !s2)
-		return (ft_strdup(""));
-	if (s1 && !s2)
-		return (ft_strdup(s1));
+		return (NULL);
 	if (!s1 && s2)
 		return (ft_strdup(s2));
-	newstr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	newstr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 2) * sizeof(char));
 	if (newstr == NULL)
 		return (0);
 	i = 0;
@@ -67,6 +66,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (j < ft_strlen(s2))
 		newstr[i++] = s2[j++];
 	newstr[i] = '\0';
+	newstr[i + 1] = '\0';
+	free(s1);
 	return (newstr);
 }
 

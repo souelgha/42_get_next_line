@@ -6,15 +6,13 @@ int	main(void)
 	int		index;
 	char	*gnl;
 
-	fd = open("test.txt", O_RDONLY);
-	index = 9;
+	fd = open("file.txt", O_RDONLY);
+	index = 12;
 	while (index--)
 	{
 		gnl = get_next_line(fd);
 		if (gnl)
-			printf("%s\n", gnl);
-		else
-			printf("%s", "NULL");
+			printf("%s", gnl);
 		free(gnl);
 	}
 	close(fd);
