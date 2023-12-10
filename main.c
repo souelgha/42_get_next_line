@@ -1,19 +1,20 @@
 #include "get_next_line.h"
+#include <stdio.h>
+#include <fcntl.h>
 
-int	main(void)
+int    main(void)
 {
-	int		fd;
-	int		index;
-	char	*gnl;
-
-	fd = open("file.txt", O_RDONLY);
-	index = 15;
-	while (index--)
-	{
-		gnl = get_next_line(fd);
-		if (gnl)
-			printf("%s", gnl);
-		free(gnl);
-	}
-	close(fd);
+    int fd = open("bible.txt", O_RDONLY);
+    int    i = 0;
+    char    *next_line = NULL;
+    while (i < 10000000)
+    {
+        next_line = get_next_line(fd);
+        if (!next_line)
+            return (printf("next_line[%d] = %s\n", i, next_line));
+        printf("next_line[%d] = %s", i, next_line);
+        free(next_line);
+        i++;
+    }
+    return (0);
 }
