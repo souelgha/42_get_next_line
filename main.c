@@ -7,7 +7,7 @@ int	main(void)
 	char	*gnl;
 
 	fd = open("file.txt", O_RDONLY);
-	index = 12;
+	index = 15;
 	while (index--)
 	{
 		gnl = get_next_line(fd);

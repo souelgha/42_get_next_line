@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:29:47 by sonia             #+#    #+#             */
-/*   Updated: 2023/12/09 15:24:28 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:01:04 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	*ft_strdup(char *src)
 		i++;
 	}
 	str[i] = '\0';
-//	free(src);
 	return (str);
 }
 
@@ -55,7 +54,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s2));
 	newstr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 2) * sizeof(char));
 	if (newstr == NULL)
-		return (0);
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (i < ft_strlen(s1))
@@ -66,7 +65,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (j < ft_strlen(s2))
 		newstr[i++] = s2[j++];
 	newstr[i] = '\0';
-	newstr[i + 1] = '\0';
 	free(s1);
 	return (newstr);
 }
