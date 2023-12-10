@@ -6,11 +6,11 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:29:47 by sonia             #+#    #+#             */
-/*   Updated: 2023/12/10 11:01:04 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:44:09 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -47,22 +47,24 @@ char	*ft_strjoin(char *s1, char *s2)
 	char			*newstr;
 	unsigned int	i;
 	unsigned int	j;
+	size_t			lentotal;
 
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1 && s2)
 		return (ft_strdup(s2));
-	newstr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 2) * sizeof(char));
+	lentotal = ft_strlen(s1) + ft_strlen(s2);
+	newstr = (char *)malloc((lentotal + 2) * sizeof(char));
 	if (newstr == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (i < ft_strlen(s1))
+	while (s1[i] != '\0')
 	{
 		newstr[i] = s1[i];
 		i++;
 	}
-	while (j < ft_strlen(s2))
+	while (s2[j] != '\0')
 		newstr[i++] = s2[j++];
 	newstr[i] = '\0';
 	free(s1);

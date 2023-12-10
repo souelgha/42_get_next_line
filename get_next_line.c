@@ -6,11 +6,11 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:11:18 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/12/10 10:54:11 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:44:16 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include "get_next_line.h"
 
 char	*ft_readbuffer(int fd, char *str)
 {
@@ -72,7 +72,7 @@ char	*ft_nextline(char *strread)
 
 	i = 0;
 	j = 0;
-	if (strread[i] == '\0')	
+	if (strread[i] == '\0')
 		return (NULL);
 	while (strread[i] != '\0' && strread[i] != '\n')
 		i++;

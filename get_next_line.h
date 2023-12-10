@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:11:00 by sonouelg          #+#    #+#             */
-/*   Updated: 2023/12/09 14:57:04 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/10 13:43:14 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 # define GET_NEXT_LINE _H 
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 7
+#  define BUFFER_SIZE 5
 # endif
 
-# include <stdio.h>
 # include <unistd.h>
-# include <fcntl.h>
 # include <stdlib.h>
 
 size_t	ft_strlen(const char *str);
