@@ -6,7 +6,7 @@
 /*   By: sonouelg <sonouelg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 21:29:47 by sonia             #+#    #+#             */
-/*   Updated: 2023/12/10 13:44:09 by sonouelg         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:30:40 by sonouelg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 && s2)
 		return (ft_strdup(s2));
 	lentotal = ft_strlen(s1) + ft_strlen(s2);
-	newstr = (char *)malloc((lentotal + 2) * sizeof(char));
+	newstr = (char *)malloc((lentotal + 1) * sizeof(char));
 	if (newstr == NULL)
 		return (NULL);
 	i = 0;
