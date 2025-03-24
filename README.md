@@ -4,6 +4,6 @@
 
 ## the program will be compiled in this way:
 
-''' bash
+``` bash
 gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c
-'''
+```
