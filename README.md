@@ -3,6 +3,7 @@
 - discover the static variable.
 
 ## the program will be compiled in this way:
+you can define BUFFER_SIZE in line cmd or leave it as defined in the header file.
 
 ``` bash
 gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 main.c
